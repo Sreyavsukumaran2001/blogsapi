@@ -26,5 +26,5 @@ urlpatterns = [
     path('goodmorning/',views.GoodMorningView.as_view()),
     path("operations/add/",cview.AddView.as_view()),
     path("operations/sub/",cview.subView.as_view()),
-    path("operations/sub/", cview.mul.as_view()
+    path("operations/sub/", cview.mul.as_view())
 ]
