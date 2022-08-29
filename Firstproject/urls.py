@@ -21,15 +21,26 @@ from django.urls import path
 from greetings import views
 from calculator import views as cview
 from blogapi import views as bview
+from mobile.views import MobilesView,MobileDetailView
+from cloth.views import ClothsView,ClothDetailView
+from mobapi import views as apiview
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('goodmorning/',views.GoodMorningView.as_view()),
-    path("operations/add/",cview.AddView.as_view()),
-    path("operations/sub/",cview.subView.as_view()),
-    path("operations/mul/", cview.mulView.as_view()),
-    path("operations/fac/", cview.facView.as_view()),
-    path("operations/wordcount",cview.WordCountView.as_view()),
-    path("social/post/",bview.PostsView.as_view()),
-    path("social/posts/<int:pid>",bview.PostDetailsView.as_view())
+    path("api/v1/teq/mobiles",apiview.MobileView.as_view()),
+    path("api/v1/teq/mobiles/<int:id>",apiview.MobileDetailView.as_view()),
+    path("api/v2/teq/mobiles",apiview.MobileModelView.as_view()),
+    path("api/v2/teq/mobiles/<int:id>",apiview.MobileModelView.as_view())
+    # path('goodmorning/',views.GoodMorningView.as_view()),
+    # path("operations/add/",cview.AddView.as_view()),
+    # path("operations/sub/",cview.subView.as_view()),
+    # path("operations/mul/", cview.mulView.as_view()),
+    # path("operations/fac/", cview.facView.as_view()),
+    # path("operations/wordcount",cview.WordCountView.as_view()),
+    # path("social/post/",bview.PostsView.as_view()),
+    # path("social/posts/<int:pid>",bview.PostDetailsView.as_view()),
+    # path("api/v1/mobiles",MobilesView.as_view()),
+    # path("api/v1/mobiles/<int:id>",MobileDetailView.as_view()),
+    # path("api/cloth/",ClothsView.as_view()),
+    # path("api/cloth/<int:id>",ClothDetailView.as_view())
 
 ]
